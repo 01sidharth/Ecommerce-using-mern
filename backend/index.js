@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const port=4000;
 const express=require("express")
 const app=express();
@@ -11,7 +13,7 @@ app.use(express.json())
 app.use(cors())
 
 //Database connection with mongoDB
-mongoose.connect("mongodb+srv://sidharthkv08:12345678qwerty@cluster0.fsnsxeg.mongodb.net/e-commerce")
+mongoose.connect(process.env.MONGODB_KEY)
 
 //API creation
 app.get("/",(req,res)=>{

@@ -4,7 +4,7 @@ import Item from '../item/Item'
 const Popular = () => {
   const[popularProduct,setPopularProduct]=useState([])
   useEffect(()=>{
-    fetch('http://localhost:4000/popularinwoman')
+    fetch(`${process.env.REACT_APP_MAIN_URL}popularinwoman`)
     .then((response)=>response.json())
     .then((data)=>setPopularProduct(data))
   },[])
